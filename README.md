@@ -1,4 +1,5 @@
 🛠️ GitHub Authentication Troubleshooting
+
 While working on this project, I encountered the following error when trying to push changes to GitHub:
 remote: {"auth_status":"auth_error","body":"Invalid username or token. Password authentication is not supported for Git operations."}
 
