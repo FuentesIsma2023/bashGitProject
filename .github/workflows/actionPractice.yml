@@ -36,6 +36,7 @@ jobs:
         run: |
           echo "Now ending build workflow."
           echo "Have a great day!"
+  
   repo_forked:
     runs-on: ubuntu-latest
     if: github.event_name == 'fork'
@@ -47,3 +48,14 @@ jobs:
         run: |
           echo "Hello $user, this job is about to end."
           echo "Job has ended."
+
+  github_info:
+    runs-on: ubuntu-latest
+    steps:
+        - env:
+            GITHUB_CONTEXT: ${{ toJson(github) }}
+          run: |
+            echo Triggered Event: ${{ github.event_name }}
+            echo Current Repository: ${{ github.repository }}
+            echo "$GITHUB_CONTEXT"
+            
